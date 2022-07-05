@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    <script src="/scripts/input.js" defer></script>
+</head>
+    <body>
+    <%- include('partials/navbar') %>
+        <h1>Portfólio Cripto</h1>
+        <div class="formContainer">
+            <form action="/save" method="POST">
+                <select name="criptoName" class="criptoOptions" required>
+                    <option value="" selected disabled hidden>Coin</option>
+                    <option value="Bitcoin">BTC</option>
+                    <option value="Ethereum">ETH</option>
+                </select>
+                <input class="onInputAmount" id="investment" name="investment" type="number" min="10" max="1000000" placeholder="Valor Investido" required>
+                <input class="onInputAmount" id="paidPerUnit" name="paidPerUnit" type="number" step="0.001" min="0.001" placeholder="Valor Pago p/Unidade" required>
+                <input id="amount" name="amount" type="number" step="any" placeholder="Quantidade Comprada" required readonly>
+                <input id="dolarReal" name="dolarReal" type="number" step="0.01" min="0.01" max="10" placeholder="USD/BRL" required>
+                <button>Save</button>
+            </form>
+        </div>
+    </body>
+</html>

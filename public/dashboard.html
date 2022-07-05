@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/dashboard.css">
+    <script src="./handlers/dataDashboard.js" defer></script>
+    <script src="./scripts/dashboard.js" defer></script>
+</head>
+    <body>
+        <nav>
+            <a class="navLink" href="/">Home</a>
+            <div class="container">
+                <form class="containerForm" action="/historic" method="POST">
+                    <select name="criptoName" class="criptoSearch" required>
+                        <option value="" disabled selected hidden>Histórico..</option>
+                        <option value="Bitcoin">BTC</option>
+                        <option value="Ethereum">ETH</option>
+                    </select>
+                    <button id="btn" type="submit"><img id="search" src="/assets/search.png" alt=""></button>
+                </form>
+                <a class="navLink" href="/dashboard.html">Dashboard</a>
+            </div>
+        </nav>
+        <h1>Dashboard Portfólio</h1>
+        <button id="BTCUSDT" value="Bitcoin" class="coin">BTC</button>
+        <button id="ETHUSDT" value="Ethereum" class="coin">ETH</button>
+
+        <p>Ativo | <span class="asset"></span></p>
+        <p>Valor Investido | <span id="investedValue"></span></p>
+        <p>Carteira | <span class="priceVariation available"></span></p>
+        <p>Quantidade Comprada | <span class="quantityPurchased"></span></p>
+        <p>Preço Médio | <span id="averagePrice"></span></p>
+        <p>USD/BRL Médio | <span id="averagePriceUSDBRL"></span></p>
+        <p>Preço atual | <span class="priceVariation" id="priceChange"></span></p>
+        <p>Lucro/Perda (Porcentagem) | <span class="priceVariation" id="profitLossPercentage"></span></p>
+        <p>Lucro/Perda (Dólar & Real) | 
+            <span class="priceVariation" id="profitLossUSD"></span><strong> ~ </strong>
+            <span class="priceVariation" id="profitLossBRL"></span>
+        </p>
+
+        <form action="">
+            <div class="salesForm">
+                <h3>Resgistrar venda</h3>
+                <input class="asset" type="text" name="criptoName" placeholder="Coin" required readonly>
+                <input class="sellingInputs" id="valueSold" name="investment" type="number" min="10" max="1000000" placeholder="Valor Vendido" required>
+                <input class="sellingInputs" id="pricePerUnit" name="pricePerUnit" type="number" step="0.001" min="0.001" placeholder="Preço p/Unidade" required>
+                <input class="sellingInputs" id="soldAmount" name="amount" type="number" step="any" placeholder="Quantidade Vendida" required readonly>
+                <div>Disp. <span id="available" class="priceVariation available"></span></div>
+                <button disabled>Registrar Venda</button>
+            </div>
+        </form>
+        
+    </body>
+</html>

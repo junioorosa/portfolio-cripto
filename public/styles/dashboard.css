@@ -1,0 +1,25 @@
+@keyframes redVariation {
+    0%{color: #000;}
+    50%{color: #ea3943;}
+    75%{color: #ea3943;}
+    100%{color: #000;}
+}
+
+.redVariation{
+    display: inline-block;
+    animation: redVariation 3s ease-out forwards;
+    animation-direction: reverse;
+}
+
+@keyframes greenVariation {
+    0%{color: #000;}
+    50%{color: #16c783;}
+    75%{color: #16c783;}
+    100%{color: #000;}
+}
+
+.greenVariation{
+    display: inline-block;
+    animation: greenVariation 3s ease-out forwards;
+    animation-direction: reverse;
+}
